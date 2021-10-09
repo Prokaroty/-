@@ -1,0 +1,49 @@
+#pragma warning(disable:4996)              
+#include<stdio.h>                          
+#include <math.h>                             
+long array[100];
+long x, top, num;
+double sum, n, y;
+long u, temp, m, nm;
+int main()
+{
+    printf("  Please enter the digits of the 'Daffodil Number': ___\b\b");
+    scanf_s("%lf", &n);    
+    for (; n <= 0 || n > 20;)
+	{
+        printf("\n  The digits you enter should be a positive integer less than 20\n\nPlease enter again: ___\b\b\b");
+        scanf_s("%.0lf", &n);                       
+    }               
+    printf("\n\n%.0lf位数的水仙花数有： ",n);
+    n = n - 1;
+    num = pow(10, n);
+    top = 10 * num ;                  
+    while (num < top)
+    {
+        nm = num;
+        for (m = 0; m <= n; m++)
+        {
+            temp = pow(10, n - m);
+            array[m] = nm / temp;             
+            nm = nm % temp;
+        }
+        sum = m = 0;
+        for (m = 0; m <= n; m++)
+        {
+            x = array[m];
+            y = pow(x, n + 1);
+            sum = sum + y;                         
+        }                        
+        if (num == sum)
+        {
+            printf("\n%ld", num);
+            u = 1;
+        }
+        num++;                         
+    }           
+    if (u == 1)
+        printf("\n  There's no anymore\n\n");
+    else
+        printf("\n  This digits of numbers don't have the 'Daffodil Number'\n\n");
+    return 0;
+}
