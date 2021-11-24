@@ -1,13 +1,15 @@
+#pragma warning (disable: 4996)
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#define OP "options"
 void pause()
 {
     int b;
-    b=0;
+    b = 0;
     getchar();
-    while(b<30000000)
-    //延时
+    while (b < 300000)
+        //延时
     {
         b++;
         printf("");
@@ -17,64 +19,54 @@ void pause()
 int main()
 //  等级     钱币  延时符  选择1   选择2   钱币原数量缓存  攻击力  防御力
 {
-    int a=0,b=0,level=1,coins=100,d=0,choice,choich,quiz,fruits=0,HP=100,companion,temp=1,asc,attack,defend,map;
-    int choicec,choiced,choicee,choicef,choiceg,choice1,choice2,choice3,choice4,choice5;
-    char ch,c;
+    int  b = 0, level = 1, coins = 100, d = 0, choice, aw, points = 0, choich, quiz, fruits = 0, HP = 100, companion,trust, temp = 1, asc=0, attack, defend, map=0;
+    int  i = 0, j = 0, k = 0, choicec, choiced, choicee, choicef, choiceg, choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8, choice9, choice10;
+    char ch, c;
     //初始界面设置
-    printf("    ∧__∧::\n   (′'ω'`)::\n  / 　　  )::\n /へ_＿  / /::\n(＿＼＼  ?)/::\n　 ｜ `-イ::\n　 /ｙ　 )::   Enter 'new' to start anew\n　/／  ／::    Enter 'load' to reload your file\n／　／::       Enter 'options' to set the game\n(　く:::\n|＼ ヽ:::\n\n\n\n");
+    printf("    ∧__∧::\n   (′'ω'`)::\n  / 　　  )::\n /へ_＿  / /::\n(＿＼＼  ?)/::\n　 ｜ `-イ::\n　 /ｙ　 )::   Enter 'new' to start anew\n　/／  ／::    Enter 'load' to reload your file\n／　／::       Enter 'option' to set the game\n(　く:::\n|＼ ヽ:::\n\n\n\n");
     printf("独自制作不易，最好按提示来，不然就算有防呆机制也可能产生bug\n");
-    scanf("%c\n",&ch);
+    scanf("%c\n", &ch);
     //扫描输入
-    while(ch!='n' && ch!='l' && ch!='o')
-    //选择‘新游戏‘、’存档’、‘设置’
+    while (ch != 'n' && ch != 'l' && ch != 'o')
+        //选择‘新游戏‘、’存档’、‘设置’
     {
         printf("\nFailed!\n Please enter again.\n");
-        ch=getchar();
+        ch = getchar();
     }
     //友好？的交互
-    switch(ch)
+    switch (ch)
     {
-        case 'n':
+    case 'n':
         //开始新游戏
         printf("\nThis is a new game...\n");
-        while(a<30000000)
-        //延时
-        {
-            a++;
-            printf("");
-        }
+        pause();
         printf("First,choose your occupation\n");
+        pause();
         printf("现阶段开发不完全请输入小写字母b\n");
         //选择职业
+        pause();
         printf("       Berserker\n       Saber\n       Wizard\n");
-        while(a<45000000)
-        //延时
-        {
-            a++;
-            printf("");
-        }
         printf("Enter the first character to choose.\n");
-        getchar();
-        getchar();
-        getchar();
-        scanf("%c",&c);
-        while(c!='b' && c!='s' && c!='w')
+        fflush(stdin);
+        scanf("%c", &c);
+        while (c != 'b' && c != 's' && c != 'w')
         {
             printf("Failed!\n Please enter correctly.\nIf the program is running successfully,forget this :)");
-            c=getchar();
+            c = getchar();
         }
-        switch(c)
-        //职业选择判断语句
+        switch (c)
+            //职业选择判断语句
         {
-            case 'b':
+        case 'b':
+            i = 1;//数组1号
             //选择berserker和角色简介
             printf("\n\n\n\n               Profession--Berserker\nYou are stronger in strengh than anyother else with a slow movement.\n");
-            attack=100;
-            defend=80;
-            printf("Attack=%d,Defend=%d",attack,defend);
+            attack = 100;
+            defend = 80;
+            printf("Attack=%d,Defend=%d", attack, defend);
             pause();
-            while(d<18)
-            //清屏
+            while (d < 18)
+                //清屏
             {
                 d++;
                 printf("\n ");
@@ -100,37 +92,32 @@ int main()
             /*
             章节1剧情分支
             */
-            scanf("%d",&choice);
+            scanf("%d", &choice);
             //做出选择
-            while(choice!=1 && choice!=2)
+            while (choice != 1 && choice != 2)
             {
                 printf("No other choices offered!!!\n\n");
                 //友好？的用户交互
                 getchar();
-                scanf("%d",&choice);
+                scanf("%d", &choice);
             }
-            while(temp<20)
+            while (temp < 20)
             {
                 temp++;
                 printf("\n");
             }
-            switch(choice)
-            /*
-            章节1分支a
-            */
+            switch (choice)
+                /*
+                章节1分支a
+                */
             {
-                case 1:printf("you are noticed and flee away as fast as you can.\n\n");
+            case 1:printf("you are noticed and flee away as fast as you can.\n\n");
                 //选择逃跑
                 pause();
                 printf("　∧＿∧ =- \n（′'ω'`) =-　\n　と′_,ノヾ =- \n　　(′ ヽ、＼ =- \n　　｀―'　＼_） =- \n");
-                b=0;
+                b = 0;
                 getchar();
-                while(b<50000000)
-                //延时
-                {
-                    b++;
-                    printf("");
-                }
+                pause();
                 printf("\n\n\n\ntired as you are,you are noticed by a villager accidentally\n\nHe invited you to shelter in his cottage.\n ");
                 pause();
                 printf("\nYou have a chat with him and know about the story of this village.\n\n");
@@ -159,22 +146,22 @@ int main()
                 pause();
                 printf("'That's the story'\n\n'I suppose you might need it' \n'you need to have a better cloth if you wanna to survive here'\n");
                 pause();
-                printf("\n\nYou get a special item:    'ancient silver coin'");
-                asc=1;
+                printf("\n\nYou get a special item:    'ancient silver coin'\n\n");
+                asc = 1;
                 printf("\nHaving thanked the villager,you headed to the town.");
                 break;
                 /*
                 章节1情节b
                 */
-                case 2:
+            case 2:
                 printf("　∧_∧\n（ 'ω')=つ≡つ\n（っ ≡つ=つ\n`/　　)\n(ノΠＵ\n");
                 printf("\n\n\n\nyou fight with the pigbrin courageously\n\nIt's really dangerous for an unarmed man like you to fight with a mob\n\nSomehow you managed to kill it.");
-                temp=coins;
-                HP=HP-80;
-                level=level+7;
-                coins=coins+20;
+                temp = coins;
+                HP = HP - 80;
+                level = level + 7;
+                coins = coins + 20;
                 pause();
-                printf("\n\nyour HP drops to %d, level rises to %d ,gain %d coins.",HP,level,coins-temp);
+                printf("\n\nyour HP drops to %d, level rises to %d ,gain %d coins.", HP, level, coins - temp);
                 pause();
                 printf("\n\nExhausted and out of breath,you lies on the ground,falling asleep...");
                 pause();
@@ -191,32 +178,32 @@ int main()
             printf("\n                You chooce to\n");
             printf("    1.ask about other things\n    2.ask for an alloyed katana\n    3.ask for a pair of armor\n");
             //选择想要的
-            scanf("%d",&choich);
+            scanf("%d", &choich);
             //做出选择
-            while(choich!=1 && choich!=2 && choich!=3)
+            while (choich != 1 && choich != 2 && choich != 3)
             {
                 printf("No other choices offered!!!\n\n");
                 //友好？的用户交互
                 getchar();
-                scanf("%d",&choich);
+                scanf("%d", &choich);
             }
-            switch(choich)
+            switch (choich)
             {
                 //switch的前括号
-                case 1:
+            case 1:
                 //367-464命令行
-                if(asc==1)
-                //如果你有古老银币，可以选择卖掉 ，（但会失去重要道具）
+                if (asc == 1)
+                    //如果你有古老银币，可以选择卖掉 ，（但会失去重要道具）
                 {
-                    coins=coins+300;
+                    coins = coins + 300;
                     printf("You ask about the ancient silver coin\n\n");
                     pause();
                     printf("The seller find some amazing spell on the coin\nHe took the spell down and give 300 coins to reserve the coin.");
                     pause();
-                    printf("\n\n   You now have %d coins\n\n",coins);
+                    printf("\n\n   You now have %d coins\n\n", coins);
                 }
                 else
-                //没有古代银币，进入与商人对话
+                    //没有古代银币，进入与商人对话
                 {
                     //支线任务背景，获取特殊道具
                     printf("The seller complained about the segregate of the mobs,which block the goods of the Barren Desert\n\n");
@@ -233,9 +220,9 @@ int main()
                     printf("'Could you do me a favour to get some ingredients,Mr.Hero?\n\nTake this potion with you in case you need cure'He said\n");
                     pause();
                     printf("'Let me keep this'You said,taking over the map\n");
-                    map=1;
+                    map = 1;
                     //获得道具：荒野地图
-                    HP=200;
+                    HP = 200;
                     //为了以后不用磕药先加上了：）
                 }
                 //else的后括号
@@ -243,49 +230,49 @@ int main()
                 printf("'Want to buy something before you leave?'Said the seller.");
                 //继续购物
                 printf("\n    1.get an alloyed katana\n    2.get a pair of armor\n    3.'There's no need'");
-                scanf("%d",&choicec);
-                switch(choicec)
+                scanf("%d", &choicec);
+                switch (choicec)
                 {
-                    case 1:
-                    coins=coins-80;
-                    attack=attack+30;
+                case 1:
+                    coins = coins - 80;
+                    attack = attack + 30;
                     printf("You get an alloyed katana.\n\n Attack+30;");
-                    printf("\n\n   You now have %d coins",coins);
+                    printf("\n\n   You now have %d coins", coins);
                     pause();
                     break;
                     //case 1-1
-                    case 2:
-                    coins=coins-120;
-                    attack=attack+20;
-                    defend=defend+50;
-                    printf("You get a pair of Armor.\n\n Attack+20;Defend+50\n\nNow you have %d coins",coins);
+                case 2:
+                    coins = coins - 120;
+                    attack = attack + 20;
+                    defend = defend + 50;
+                    printf("You get a pair of Armor.\n\n Attack+20;Defend+50\n\nNow you have %d coins", coins);
                     pause();
                     break;
                     //case 1-2
                 }
                 break;
                 //case 1 的break（total）
-                case 2:
+            case 2:
                 //case 2 买太刀
-                coins=coins-80;
-                attack=attack+30;
+                coins = coins - 80;
+                attack = attack + 30;
                 printf("You get an alloyed katana.\n\n Attack+30;");
-                printf("\n\n   You now have %d coins",coins);
+                printf("\n\n   You now have %d coins", coins);
                 pause();
                 break;
                 //case 的break
-                case 3:
+            case 3:
                 //case 3 买套装
                 //若想买套装
                 /*
                 1.如果击杀了猪布林有了120coins,可以购买一套盔甲
                 */
-                if(coins>=120)
+                if (coins >= 120)
                 {
-                    attack=attack+20;
-                    defend=defend+50;
-                    printf("You get a pair of Armor.\n\n Attack+20;Defend+50\n\nNow you have %d coins",coins-120);
-                    coins=coins-120;
+                    attack = attack + 20;
+                    defend = defend + 50;
+                    printf("You get a pair of Armor.\n\n Attack+20;Defend+50\n\nNow you have %d coins", coins - 120);
+                    coins = coins - 120;
                 }
                 //2.如果没有120coins则无法购买
                 else
@@ -293,21 +280,21 @@ int main()
                     //else的前括号
                     printf("\nSorry,you are lack of money!\n");
                     pause();
-                    choiced=0;
+                    choiced = 0;
                     //钱不够买一套，换成买太刀或者离开.
                     printf("'Want to buy something else?'Said the seller.\n\n");
                     printf("    1.get an alloyed katana\n    2.'There's no need'\n");
-                    scanf("%d",&choiced);
-                    switch(choiced)
+                    scanf("%d", &choiced);
+                    switch (choiced)
                     {
                         //switch
-                        case 1:
-                        coins=coins-80;
+                    case 1:
+                        coins = coins - 80;
                         printf("You get an alloyed katana.\n\n Attack+30;");
-                        printf("\n\n   You now have %d coins",coins);
+                        printf("\n\n   You now have %d coins", coins);
                         break;
                         //case 3-1
-                        case 2:
+                    case 2:
                         printf("'No, thanks.'you reply.");
                         break;
                         //case  3-2
@@ -321,9 +308,9 @@ int main()
             }
             //switch的后括号（total）
             pause();
-            d=0;
-            while(d<23)
-            //清屏
+            d = 0;
+            while (d < 23)
+                //清屏
             {
                 d++;
                 printf("\n ");
@@ -331,11 +318,11 @@ int main()
             printf("You left the Armor Shop\n");
             pause();
             //章节3 支线1
-            if(map==1)
-            //如果刚才获得了地图
-            /*
-            下面都是if的部分！！
-            */
+            if (map == 1)
+                //如果刚才获得了地图
+                /*
+                下面都是if的部分！！
+                */
             {
                 //if的前括号
                 printf("Holding the map, You desided to have a rough detection of the desert\n");
@@ -348,27 +335,27 @@ int main()
                 pause();
                 printf("\n                You chooce to\n");
                 printf("    1.Try to chase it\n    2.Use the potion to heal it\n    3.ignore it and go on\n");
-                scanf("%d",&choicee);
+                scanf("%d", &choicee);
                 //做出选择
-                while(choicee!=1 && choicee!=2 && choicee!=3)
+                while (choicee != 1 && choicee != 2 && choicee != 3)
                 {
                     //while 的括号
                     printf("No other choices offered!!!\n\n");
                     //友好？的用户交互
                     getchar();
-                    scanf("%d",&choicee);
+                    scanf("%d", &choicee);
                 }
                 //while 的括号
-                switch(choicee)
+                switch (choicee)
                 {
                     //switch开始
-                    case 1:
+                case 1:
                     printf("It reacts severely,trying to defend itself.\n");
                     pause();
                     printf("You keeps moving around it, not wanting to be attacked\n ");
                     pause();
-                    if(defend>100 && HP>=100)
-                    //能否收服宠物的条件判断defend>80且HP>100
+                    if (defend > 100 && HP >= 100)
+                        //能否收服宠物的条件判断defend>80且HP>100
                     {
                         //if的前括号
                         printf("You draft around it carefully\n\nFinally,it get tired and fainted.\n");
@@ -385,7 +372,7 @@ int main()
                         pause();
                         printf("it thinks that you are somehow kind to him.\n\n\n ");
                         printf("You are lucky to have a companion,which you name it 'pika'\n");
-                        companion=1;
+                        companion = 1;
                     }
                     //if的后括号
                     else
@@ -398,7 +385,7 @@ int main()
                     //else的后括号
                     break;
                     //case 1结束
-                    case 2:
+                case 2:
                     printf("You carefully observe it,suddenly finding a long wound on its left leg\n\n");
                     pause();
                     printf("You use the healing potion to cure its injuried leg.");
@@ -406,13 +393,13 @@ int main()
                     printf("You find it rather alert to strangers, and the moment you tries to lift it up.\n\nA strong sence of paralysis makes you hard to move.");
                     pause();
                     printf("That's when it escape your hands,and vanished amid the withered grass.\n");
-                    HP=HP-80;
+                    HP = HP - 80;
                     //用掉了一瓶恢复药水
                     pause();
                     printf("You had to move on to get the ingredience, feeling quite annoyed.");
                     break;
                     //case 2结束
-                    case 3:
+                case 3:
                     printf("Feeling that it's best not to provoke it\n\n");
                     pause();
                     printf("You bypass it and move on to get the ingredients...\n\n");
@@ -428,27 +415,27 @@ int main()
                 pause();
                 printf("\n                You chooce to\n");
                 printf("    1.Defeat them all\n    2.attract them to leave\n    3.Try to find other fruite resource\n");
-                scanf("%d",&choice1);
+                scanf("%d", &choice1);
                 //做出选择
-                while(choice1!=1 && choice1!=2 && choice1!=3)
+                while (choice1 != 1 && choice1 != 2 && choice1 != 3)
                 {
                     //while 的括号
                     printf("No other choices offered!!!\n\n");
                     //友好？的用户交互
                     getchar();
-                    scanf("%d",&choicee);
+                    scanf("%d", &choicee);
                 }
-                switch(choice1)
+                switch (choice1)
                 {
                     //switch 开始
-                    case 1:
-                    if(defend>100 && attack>=100)
+                case 1:
+                    if (defend > 100 && attack >= 100)
                     {
                         //if开始.
                         printf("Though they are large in number\nActually you find them quite weak\nMaybe you could attribute your success to your armor.");
                         pause();
                         printf("You successfully get enough ingredients needed for potion\nBefore the next troop come,you find it better to leave soon.\n");
-                        fruits=1;
+                        fruits = 1;
                     }
                     //if结束
                     else
@@ -457,13 +444,13 @@ int main()
                         printf("They are large in number,which makes you hard to kill them all\n");
                         pause();
                         printf("You had to flee to avoid being killed\n");
-                        fruits=0;
+                        fruits = 0;
                         printf("You feel quite annoyed not to get the ingrediemce.");
                     }
                     //else结束
                     break;
                     //case 1结束
-                    case 2:
+                case 2:
                     printf("You try to make a load noice to get the mobs attracted away\n");
                     pause();
                     printf("Not all of them leave,but that's enough for you to fetch the fruit.\n");
@@ -471,7 +458,7 @@ int main()
                     printf("Before they return,you've got the ingredience and fled away\n");
                     break;
                     //case2结束
-                    case 3:
+                case 3:
                     printf("You try to find ; possible sources\n\nSadly, everywhere is guarded by mobs.");
                     pause();
                     printf("Thirsty and tired,you find a cool place to have a rest.\n");
@@ -484,11 +471,11 @@ int main()
                     printf("     ln(sinx)-ln(arcsinx) \n Lim -------------------\n x→0        x*arctanx\n\n");
                     printf("    1. 0      2. -1/3      3. 1     4.Null\n\n");
                     printf("'Hero from the past,if you could get the right answer,\nThe Gate of Fate will opens for you'\n\n");
-                    scanf("%d",&quiz);
-                    switch(quiz)
+                    scanf("%d", &quiz);
+                    switch (quiz)
                     {
                         //switch开始
-                        case 2:
+                    case 2:
                         printf("'Seems like you are quite well in mathmatic\n ");
                         pause();
                         printf("Emmm...forget that,I will show you the gate.'You heard an old voice\n");
@@ -528,20 +515,20 @@ int main()
                         printf("Only can you get 4 correct answer will the door opens for you\nOtherwise, you'll be sent back\n");
                         pause();
                         printf("Question1:        lnax \n Lim { ln(xlna)ln-------- }\n x→0             lnx-lna \n\n 1. lna     2. ln2a    3. 1    4.2lna\n\n\n");
-                        scanf("%d",&choice2);
-                        if(choice2==4 )
+                        scanf("%d", &choice2);
+                        if (choice2 == 4)
                         {
                             printf("Question2:\n:    sin2x \n Lim-------- \n x→0 sin3x  \n\n  1. 0    2. 1    3. π    4. 1/π\n\n\n");
-                            scanf("%d",&choice3);
-                            if(choice3==2 )
+                            scanf("%d", &choice3);
+                            if (choice3 == 2)
                             {
                                 printf("Question3:设曲面E:z^2 = x^2 + y^2 ,1≤z≤2,其面密度为常数p，求原点处质量为1的质点和E曲面之间的引力（引力常数为G）\n\n 1. 1/2Gpπln3    2. Gpπln2    3. 1\3Gpπln2    4. Gpπln3\n\n\n");
-                                scanf("%d",&choice4);
-                                if(choice4==2 )
+                                scanf("%d", &choice4);
+                                if (choice4 == 2)
                                 {
                                     printf("Question4:求二重积分I = ff|x^2+y^2-x-y|dxdy\n           x^2+y^2≤1\n\n  1. 1+π/4    2. 1+π/8    3. 1+3π/8    4.π/4\n\n\n");
-                                    scanf("%d",&choice5);
-                                    if(choice5==3)
+                                    scanf("%d", &choice5);
+                                    if (choice5 == 3)
                                     {
                                         printf("You are brilliant!!\nI did't guess someone would pass the course!!\n ");
                                         pause();
@@ -562,15 +549,15 @@ int main()
                             pause();
                             printf("'You failed, I said I have to send you back accoring to the God'The old man says.\n");
                             printf("You are sent back to the ground,with a bag of fruits you want by your side\n");
-                            fruits=1;
+                            fruits = 1;
                             break;
                         }
                         //这里还有剧情没写！！！
-                        default:
+                    default:
                         printf("'no no no,you get a wrong answear.I have to postpone this plan now\n\n emm...yes,this is a gift,hope we can meet next time'An old voice said.\n");
                         pause();
                         printf("You are sent back to the ground,with a bag of fruits you want by your side\n");
-                        fruits=1;
+                        fruits = 1;
                         break;
                     }
                     //quiz结束
@@ -580,9 +567,10 @@ int main()
                 //switch 结束
             }
             //有map情况结束
-            else if(asc==1)
+            else if (asc == 1)
             {
                 //else if 开始
+                trust = 10;//信任值初始化
                 printf("You suddenly remember the ancient silver coin\n");
                 pause();
                 printf("There seems to be some spell on the front\n\n");
@@ -600,20 +588,38 @@ int main()
                 printf("Taking a look around,you find the arrow is leading you right to the mountains\n");
                 pause();
                 printf("\n         you decide to:\n    1.enter the mountains under the moon-light\n    2.set up a camp-fire, and wait for the next day.\n\n");
-                scanf("%d",&choicef);
+                scanf("%d", &choicef);
                 //做出选择
-                while(choicef != 1 && choicef != 2)
+                while (choicef != 1 && choicef != 2)
                 {
                     //while 的括号
                     printf("No other choices offered!!!\n\n");
                     //友好？的用户交互
                     getchar();
-                    scanf("%d",&choicef);
+                    scanf("%d", &choicef);
                 }
                 //while 的括号
-                switch(choicef)
+                switch (choicef)
                 {
-                    case 1:
+                case 2:
+                    printf("You set up a camp-fire, and collect some fruits to eat.\n");
+                    pause();
+                    printf("As the sunlight shades, the air gets colder and colder\n");
+                    pause();
+                    printf("You are napping on the grass, when suddenly some rustling sound catch your attention\n");
+                    pause();
+                    printf("Alerting fears suddenly fill up your heart\n");
+                    pause();
+                    printf("You look far to the direction of the town");
+                    pause();
+                    printf("mobs seem to emerge suddenly at the rage of your sight");
+                    pause();
+                    printf("After a days travel, you know that you can't escape them easilily ");
+                    pause();
+                    printf("You have to avoid the large crowd while withdraw deep into the forests");
+                    pause();
+                    trust = trust + 5;
+                case 1:
                     printf("The minute you enter the forest,the dense leaves shade the dusk light\n\nMaking the arrow disappear. ");
                     pause();
                     printf("To make things worse,the trees seem to be vanished in the thick fog\n");
@@ -639,49 +645,157 @@ int main()
                     pause();
                     printf("You fellow the elf into the house.\n\nThe light of fireflies illuminates the small room,making it seems quite warm inside.\n\n");
                     pause();
-                    printf("'You used to be the sinner of the whole elves.'The old elf said,\n'But since you've lost your memory,I'd like to let you know something.\n'");
+                    printf("'Seems that something ties our destiny together right?'\n\n");
                     pause();
-                    printf("'Long ago when the elves live along with humans to resist mobs'\n\n'sorry,I may have made you confussed. Let's start by yourself,right?'The old elf said\n");
+                    printf("'Would you mind telling me something about you?'\n\n");
                     pause();
-                    printf("    You'd like to say:\n    1.I wake up at a cave\n    2.What this coin used for?\n    3.What I did before?\n");
-                    scanf("%d",&choiceg);
-                    while(choiceg!=1 && choiceg!=2 && choiceg!=3)
+                    break;
+                }
+                    printf("    You'd like to say:\n    1.I wake up at a cave...\n    2.I fellow the coin here...\n    3.What's the destiny you just said?\n");
+                    
+                    scanf("%d", &choiceg);
+                    while (choiceg != 1 && choiceg != 2 && choiceg != 3)
                     {
                         printf("No other choices available.\n");
                         getchar();
-                        scanf("%d",choiceg);
+                        scanf("%d", choiceg);
                     }
-                    switch(choiceg)
+                    switch (choiceg)
                     {
                         //switch开始
+                    case 1:
+                        pause();
+                        printf("I woke up at a cave without anything\n\n");
+                        pause();
+                        printf("After meeting a mob, I tried to escape it and was saved by a villager\n\n");
+                        pause();
+                        printf("He gave me this ancient coin \n\n");
+                        pause();
+                        printf("When lit, there is an arrow on the surface of the coin\n\n");
+                        pause();
+                        printf("And I fellow the arrow here.\n\n");
+                        pause();
+                        printf("'Seems like you have a troublesome experience'The old elf said\n\n");
+                        pause();
+                        printf("'However, things began to go wrong'\n\n");
+                        pause();
+                        printf("As you see, there began to have annoying fog since you were awake\n\n");
+                        pause();
+                        printf("'Maybe the arrow is leading you to a place where we can solve this problem'\n\n");
+                        pause();
+                        printf("'Have a sound sleep now, I'll go with you tomorrow'\n\n");
+                        pause();
+                        printf("After a whole day's hking, you fall asleep in one guest-room quickly......\n\n");
+                        pause();
+                        printf("sleeping...\n\n");
+                        pause();
+                        printf("sleeping...\n\n");
+                        pause();
+                        break;
+                        //case1结束
+                    case 2:
+                        printf("'I was from the village, coming here to see what this coin used for.'\n\n");
+                        pause();
+                        printf("'The fog blocked my way, but I manage to get here'\n\n");
+                        pause();
+                        printf("'This coin leads me near here, when the little elf find me'\n\n");
+                        pause();
+                        printf("You handed her the coin, 'do you know something about it?'\n\n");
+                        pause();
+                        printf("'I mean, anything relevant can be ok, I begin my study of it early this day'\n\n");
+                        pause();
+                        printf("'You know that it's not easy for me to do this kind of work'\n\n");
+                        pause();
+                        printf("Nymph observes the coin carefully, finally she says,'That must be masterpiece of my ancestor'\n\n");
+                        pause();
+                        printf("'It's said that a hero with this would bring the facts out of mist.'\n\n");
+                        pause();
+                        printf("'You must count for it, do you mind us do some reserch together this night?'\n\n\n");
+                        pause();
+                        printf("You choose to say:\n  1.Sorry, but I'm totally exhausted now\n  2.That's fine, may this helps you");
+                        scanf("%d", &choice7);
+                        //做出选择
+                        while (choice7 != 1 && choice7 != 2)
+                        {
+                            //while 的括号
+                            printf("No other choices offered!!!\n\n");
+                            //友好？的用户交互
+                            getchar();
+                            scanf("%d", &choice7);
+                        }
+                        //while 的括号
+                        switch (choice7)
+                        {
                         case 1:
-                        pause();
-                        printf("I woke up at a cave without anything\n");
-                        pause();
-                        printf("After meeting a mob, I tried to escape it and was saved by a villager\n");
-                        pause();
-                        printf("He gave me this ancient coin \n");
-                        pause();
-                        printf("When lit, there is an arrow on the surface of the coin\n");
-                        pause();
-                        printf("And I fellow the arrow here.\n");
-                        pause();
-                        printf("'Seems like you have a troublesome experience'The old elf said\n");
-                        pause();
-                        printf("'However, things begin to go wrong'");
-                        pause();
-                        printf("As you see, there began to have annoying fog since you were awake\n");
-                        pause();
-                        printf("'Maybe the arrow is leading you to a place where we can solve this problem'\n");
-                        pause();
-                        printf("'Have a sound sleep now, I'll go with you tomorrow\n'");
-                        pause();
-                        printf("After a whole day's hking, you fall asleep in one guest-room quickly......\n");
-                        pause();
-                        printf("sleeping...\n");
-                        pause();
-                        printf("sleeping...\n");
-                        pause();
+                            printf("'Sorry to bother, but I'm as tired as a dog after a day's traveling'\n\n");
+                            pause();
+                            printf("'Tomorrow might be ok'\n\n");
+                            pause();
+                            printf("'Oh, I forget that, my little girl will lead your way, go for a rest now'\n\n");
+                            pause();
+                            printf("'There's seems much to do tomorrow'\n\n");
+                            pause();
+                            trust = trust - 2;
+                            break;
+                        case 2:
+                            printf("'Fine, tell me about the legend if possible'\n\n");
+                            pause();
+                            printf("You follws Nymph into a library, in the center of which lies an ole wooden table.\n\n");
+                            pause();
+                            printf("'Hmm, let me find the book...'\n\n");
+                            pause();
+                            printf("'It should be here.. my poor girl, did you hide the Legend Scroll somewhere?'\n\n");
+                            pause();
+                            printf("'I don't think I know where you hides it', The little elf answers from the living room.\n\n");
+                            pause();
+                            printf("'Let focus on the coin now, there's enough story now.'\n\n");
+                            pause();
+                            printf("'Humm, let start with this......'\n\n");
+                            pause();
+                            printf("Although tired, you do see some similar graphs on the book.\n\n");
+                            pause();
+                            printf("The smell of the room makes you much distracted and can't focus your attention\n\n");
+                            pause();
+                            printf("A night has passed before you even know about it\n\n");
+                            pause();
+                            printf("The moment you wake up, you find yourself on the bed, with  the little elf besides\n\n");
+                            pause();
+                            printf("'Mom told me to take care of you, or you would have a sound sleep in the library'\n\n");
+                            trust = trust + 5;
+                            pause();
+                            break;
+                            //case的break
+                        }
+                    case 3:
+                            printf("'You seem to know about my past,can you continue to tell me abou that?' You ask\n\n");
+                            pause();
+                            printf("'This would take long, are you completely unconcious of your past?' Nymph asks\n\n");
+                            pause();
+                            printf("You nodded your head, motioning her to continue\n\n");
+                            pause();
+                            printf("'Since you've lost your memory, I think that you would like to know the history of the world.\n\n'");
+                            pause();
+                            printf("'Long ago when the elves live along with humans to resist mobs'\n\n");
+                            pause();
+                            printf("'Before we launch the Lore War with mobs, our ancestors build up walls to defend the mobs, and left several tools to fight against them'\n\n");
+                            pause();
+                            printf("'This coin might be a key to the trasures\n\n'");
+                            pause();
+                            printf("'You are the hero selected. And I will do my best to support you'\n\n");
+                            pause();
+                            printf("Hearing the storys, You are buried deep in thought\n\n");
+                            pause();
+                            printf("You can tell that there's some message Nymph hides in the story\n\n");
+                            pause();
+                            printf("But you're too tired to asked and listen again.\n\n");
+                            pause();
+                            printf("'Please, I'm quite exhausted now, can I rest for a while' You interupte Nymph\n\n");
+                            pause();
+                            printf("'I should know that, let my little girl lead you way to have a good rest...'\n\n");
+                            trust = trust + 10;
+                            break;
+                        }
+                        //case的break
                         printf("The next day, the shining bright sunlight dispell the mist.\n");
                         pause();
                         printf("'Are you ready to go now?My poor girl fell ill last night'\n");
@@ -718,6 +832,8 @@ int main()
                         pause();
                         printf("As the chilly wind blowing roughly, there's no fog nearby\n");
                         pause();
+                        printf("You look far from the cliff, the villages in the distance, the dense forests nearby are clearly visible\n");
+                        pause();
                         printf("'Where does it lead to？'Nymph asks\n");
                         pause();
                         printf("'It disappears the moment we arrived there'You reply\n");
@@ -728,15 +844,15 @@ int main()
                         pause();
                         printf("After you recovered, you find yourself transported to a place alone.\n");
                         pause();
-                        printf("'Nymph?'you call out her name aloud, unfortunately, there's no reply\n");
+                        printf("'Nymph?'you call out her name aloud, unfortunately, every time there's no reply\n");
                         pause();
                         printf("'The elf is forbidden to go there'A solemn voice rang in your ears\n");
                         pause();
                         printf("'Who are you? Where am I here?'You asked at a tense\n");
                         pause();
-                        printf("'I'm at the honor of the Gods, giving you a chance to meet my Honored Master'the voice continued\n");
+                        printf("'I'm at the honor of the Gods, giving you a chance to meet my Honored Majesty'the voice continued\n");
                         pause();
-                        printf("'This is your task: escape the falling arrows. I will return if you succeed.'\n");
+                        printf("'This is your trail: escape the falling arrows. Just prove that you worth my help.'\n");
                         pause();
                         printf("You even didn't get a chance to ask about other suspicions\n");
                         pause();
@@ -744,194 +860,385 @@ int main()
                         pause();
                         printf("The arrows begin to fall from the sky\n");
                         pause();
-                        printf("You manage to escape them.\n");
+                        printf("You manage to escape them....\n");
                         pause();
-                        int aw,points=0;
-                        clock_t start,end;
+                    game1://goto语句处
+                        clock_t start, end;
                         printf("**********little game starts**********");
                         printf("\nenter the number where you can survive the arrows\n");
                         printf("\n请在看到箭头后迅速输入没有箭头的列数，立刻按’Enter’进行下一轮。时间和分数都合格者胜出\n\n");
                         getchar();
-                        start= time(NULL);
+                        start = time(NULL);
                         printf("1     2     3     4     5     6     7    \n");
                         pause();
                         printf("↓           ↓     ↓     ↓           ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==2||aw==6) points++;
+                        scanf("%d", &aw);
+                        if (aw == 2 || aw == 6) points++;
                         pause();
                         printf("      ↓           ↓     ↓           ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==1||aw==3||aw==6) points++;
+                        scanf("%d", &aw);
+                        if (aw == 1 || aw == 3 || aw == 6) points++;
                         pause();
                         printf("↓           ↓     ↓           ↓     ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==2||aw==5) points++;
+                        scanf("%d", &aw);
+                        if (aw == 2 || aw == 5) points++;
                         pause();
                         printf("↓           ↓           ↓     ↓     ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==2||aw==4) points++;
+                        scanf("%d", &aw);
+                        if (aw == 2 || aw == 4) points++;
                         pause();
                         printf("      ↓     ↓           ↓     ↓      \n");
-                        scanf("%d",&aw);
-                        if(aw==1||aw==4||aw==7) points++;
+                        scanf("%d", &aw);
+                        if (aw == 1 || aw == 4 || aw == 7) points++;
                         pause();
                         printf("↓     ↓     ↓     ↓     ↓           ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==6) points++;
+                        scanf("%d", &aw);
+                        if (aw == 6) points++;
                         pause();
                         printf("      ↓     ↓     ↓           ↓     ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==1||aw==5) points++;
+                        scanf("%d", &aw);
+                        if (aw == 1 || aw == 5) points++;
                         pause();
                         printf("↓     ↓                 ↓     ↓      \n");
-                        scanf("%d",&aw);
-                        if(aw==3||aw==4||aw==7) points++;
+                        scanf("%d", &aw);
+                        if (aw == 3 || aw == 4 || aw == 7) points++;
                         pause();
                         printf("↓     ↓           ↓           ↓     ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==3||aw==5) points++;
+                        scanf("%d", &aw);
+                        if (aw == 3 || aw == 5) points++;
                         pause();
                         printf("↓           ↓     ↓           ↓      \n");
-                        scanf("%d",&aw);
-                        if(aw==2||aw==7||aw==5) points++;
+                        scanf("%d", &aw);
+                        if (aw == 2 || aw == 7 || aw == 5) points++;
                         pause();
                         printf("      ↓     ↓     ↓     ↓     ↓      \n");
-                        scanf("%d",&aw);
-                        if(aw==1||aw==7) points++;
+                        scanf("%d", &aw);
+                        if (aw == 1 || aw == 7) points++;
                         pause();
                         printf("↓     ↓           ↓     ↓     ↓     ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==3) points++;
+                        scanf("%d", &aw);
+                        if (aw == 3) points++;
                         pause();
                         printf("      ↓                 ↓           ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==1||aw==3||aw==4||aw==6) points++;
+                        scanf("%d", &aw);
+                        if (aw == 1 || aw == 3 || aw == 4 || aw == 6) points++;
                         pause();
                         printf("↓           ↓                 ↓     ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==2||aw==4||aw==5) points++;
+                        scanf("%d", &aw);
+                        if (aw == 2 || aw == 4 || aw == 5) points++;
                         pause();
                         printf("↓           ↓     ↓     ↓            \n");
-                        scanf("%d",&aw);
-                        if(aw==2||aw==6||aw==7) points++;
+                        scanf("%d", &aw);
+                        if (aw == 2 || aw == 6 || aw == 7) points++;
                         pause();
                         printf("            ↓           ↓     ↓     ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==2||aw==1||aw==4) points++;
+                        scanf("%d", &aw);
+                        if (aw == 2 || aw == 1 || aw == 4) points++;
                         pause();
                         printf("↓           ↓     ↓     ↓           ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==2||aw==6) points++;
+                        scanf("%d", &aw);
+                        if (aw == 2 || aw == 6) points++;
                         pause();
                         printf("      ↓     ↓           ↓     ↓      \n");
-                        scanf("%d",&aw);
-                        if(aw==1||aw==4||aw==7) points++;
+                        scanf("%d", &aw);
+                        if (aw == 1 || aw == 4 || aw == 7) points++;
                         pause();
                         printf("↓     ↓           ↓     ↓     ↓     ↓\n");
-                        scanf("%d",&aw);
-                        if(aw==3) points++;
-                        end=time(NULL);
-                        printf("You escape %d arrows",aw);
-                        printf("You use %.1f seconds",difftime(end,start));
-                        if(points>15 && difftime(end,start)<28)printf("congratulations!!\n\nYou win");
-                        else printf("You fail the little game\n\nTry again if you want");
-                        printf("下次再来吧");
+                        scanf("%d", &aw);
+                        if (aw == 3) points++;
+                        end = time(NULL);
+                        printf("You escape %d arrows", points);
+                        printf("You use %.1f seconds", difftime(end, start));
+                        if (points > 15 && difftime(end, start) < 28)
+                        {
+                            printf("congratulations!!\n\nYou win");
+                            pause();
+                            printf("\nAfter escaping the arrows, you are too exhausted to feel your legs");
+                            pause();
+                            printf("\n'Seems that you are quite swift, right?' the voice appears again");
+                            pause();
+                            printf("'Fellow me'\n\nYou try to stand up, but within a second, you find yourself flying towards the voice\n\n");
+                            pause();
+                            printf("'Where are we going to?' you asked\n\n");
+                            pause();
+                            printf("'To The Grand Palace Of Setekh'you finally discovered where the voice came from,\n a crow-like creature with a long, curved, pointed snout\n\n");
+                            pause();
+                            printf("'Here we get it',the crow says, suddenly disappering with a noise of weird laugh\n\n");
+                            pause();
+                            printf("'A hero selected by him right? Interesting' Another voice appears\n\n");
+                            pause();
+                            printf("'So how do you think of your situation now?' the voice asked\n\n");
+                            pause();
+                            printf("You raise your head up, still astonished by the palace suddely erected behind you\nBut still not able to see the majesty up on the palace\n\n");
+                            pause();
+                            printf("'Answer me please'the voice asks again 'about your situation'\n\n");
+                            pause();
+                            printf("'I came here fellowing the compass on this coin, and Nymph, an elf came with me '\n\n");
+                            pause();
+                            printf("'But she disappear the moment I fell into this space'\n\n");
+                            pause();
+                            printf("'Why she didn't get here?' You asked\n\n");
+                            pause();
+                            printf("'Do you still think that little elf allied with you just for your so-called hero identity?' the voice teases\n\n");
+                            pause();
+                            printf("'You got yours, she took it away \n You must have forget all about these'\n\n");
+                            pause();
+                            printf("You are astonished to get this answear, but still find many things remind unexplained\n\n");
+                            pause();
+                            printf("'So you came to my palace compeletely unknown of your past ?'\n\n");
+                            pause();
+                            printf("After a long sigh, the voice continues\n\n");
+                            pause();
+                            printf("'Once in the ancient past, There is no hero at all'\n\n");
+                            pause();
+                            printf("'But the Nether Dimension intruded through a gate at the end of the world'\n\n");
+                            pause();
+                            printf("'Even the weak Pigrins for example, are stronger than the native creature here.'\n\n");
+                            pause();
+                            printf("'And you, a toy abandonded ,are forced to wake up again and again to stop this disaster\n\n '");
+                            pause();
+                            printf("'You won't be the last one to rolled in, so do I'\n\n");
+                            pause();
+                            printf("'Hero? Just a chess to entertain them.'\n\n");
+                            pause();
+                            printf("'Everything were chesses for fun....'\n\n");
+                            pause();
+                            printf("You heard the voice from a whisper to roar, and suddenly end up with a sigh.\n\n");
+                            pause();
+                            trust = trust - 5;
+
+                        }
+                        else
+                        {
+                            printf("You fail the little game\n\nTry again if you want");
+                            pause();
+                            printf("You want to:\n  1.Try again     2.Go ahead");
+                            scanf("%d", &choice6);
+                            while (choice6 != 1 && choice6 != 2)
+                            {
+                                //while 的括号
+                                printf("No other choices offered!!!\n\n");
+                                //友好？的用户交互
+                                getchar();
+                                scanf("%d", &choice6);
+                            }
+                            if (choice6 == 1)
+                            {
+                                points = 0;
+                                goto game1;
+                            }//goto转到游戏
+                        }
+                        if (trust < 5)
+                        {
+                            printf("You just feel a strong wind blow you up to the sky\nSurronded by clouds, you get dazzlled easily.\n\n");
+                            pause();
+                            printf("The moment you wake up, you find Nymph searching around for something\n\n");
+                            pause();
+                            printf("She seems to be looking for you. Strangely, the shining sunlight make it hard to focus on her figure.\n\n");
+                            pause();
+                            printf("The moment you call out her name, your voice is stuck in your throat, just like someone strangles your neck\n\n");
+                            pause();
+                            printf("Suddenly, someone dressed up like you walked out of a Portal which also appears all of a sudden.");
+                            pause();
+                            printf("You see him walking closer to Nymph, which terrifies her completely\n\n");
+                            pause();
+                            printf("Then their conversation seems to change from chat to quarrel, but no sound comes out all the time\n\n");
+                            pause();
+                            printf("The fight immediately breaks out, but it doesn't take a long time before the man dressed like you is knocked down to unconscious.\n\n ");
+                            pause();
+                            printf("Nymph searchs in his cloth carefully...\n\n");
+                            pause();
+                            printf("Before long, she finds a wrist watch covered in the clouth\n\n ");
+                            pause();
+                            printf("You watch her walking farther and farther, till the figure vanished in the dense forests\n\n");
+                            pause();
+                        }
+                        printf("After a familiar flash, you find yourself again at the edge of the hill.\n\n");
                         pause();
-                        break;
-                        //case1结束
+                        printf("Judging by the dusk light, you know that you didn't leave for a long time.\n\n");
+                        pause();
+                        printf("Nymph was ahead of you, just where she was before you get into that special dimension\n\n");
+                        pause();
+                        printf("You would like do\n  1.Yell to stop her\n  2.Check your belongings\n");
+                        pause();
+                        if (trust < 5)
+                        {
+                            printf("\n  3.Step up to subdue her\n");
+                        }
+                        scanf("%d", &choice8); 
+                        //做出选择
+                        while (((choice8 != 1) && (choice8 != 2)) &&((choice8 != 3)||(trust > 5 )))
+                        {
+                            printf("No other choices offered!!!\n\n");
+                            //友好？的用户交互
+                            getchar();
+                            scanf("%d", &choice8);
+                        }
+                        
+                        switch (choice8)
+
+                        {
+
+                        case 1:
+
+                            printf("You wave and yell towards Nymph\n\n");
+
+                            pause();
+
+                            printf("'Anything wrong?'asks Nymph\n\n");
+
+                            pause();
+
+                            printf("You suddenly realize that your disappear might not interfere this world\n\n");
+
+                            pause();
+
+                            printf("'The stoped time, the reaction of Nymph all pointed out a surprising fact'\n\n");
+
+                            pause();
+
+                            printf("This is a Stand-in messenger called 'The world'!!!\n\n");
+
+                            pause();
+
+                            printf("'俺は人间をやめるぞ! ジョジョ──ッ!!'\n\n");
+
+                            pause();
+
+                            printf("(ps:This is an 'easter egg' made by the author when he was sick in mind)\n\n");
+
+                            pause();
+
+                            if (trust >= 15)
+
+                            {
+
+                                printf("'I was brought into a strange dimension just now'\n\n");
+
+                                pause();
+
+                                printf("'There were traps, crows there, and even a grand palace among the mists'\n\n");
+
+                                pause();
+
+                                printf("'They didn't bring you here, right?' You asked\n\n");
+
+                                pause();
+
+                                printf("'I didn't realise you have left yet, but how you get out of there?' Nymph asked\n\n");
+
+                                pause();
+
+                                printf("'After talk with the majesty, I suppose he sends me back'\n\n");
+
+                                pause();
+
+                                printf("'Interesting, but what do you get from him? Did the majesty tell you something important?'\n\n");
+
+                                pause();
+
+                                printf("You suddenly realise this, and when you search through yourself\n\n");
+
+                                pause();
+
+                                printf("You find a golden wrist watch inside your pocket\n\n");
+
+                                pause();
+
+                                printf("'What's this watch used for?'\n\n");
+
+                                pause();
+
+                                printf("'Seems like a very special item. I remember that I once saw this clock on an ancient book.'\n\n");
+
+                                pause();
+
+                                printf("'Let's return now, the sun is about to set'Nymph suggests\n\n");
+
+                                pause();
+
+                            }
+
+                            else
+
+                            {
+
+                                printf("'Nothing special, it's getting dark outside. I don't think we should stay outside there'\n\n");
+
+                                pause();
+
+                                printf("'Maybe tomorrow we can come here ealier'\n\n");
+
+                                pause();
+
+                                printf("Nymph thinks for a while, then admit that it's dangerous to stay in the darkness\n\n");
+
+                                pause();
+
+                                printf("'Ok, let return quickly, there's so much reminds to do'\n\n");
+
+                                pause();
+
+                                printf("");
+
+                                pause();
+                            }
+
+                            printf("After the sunset, the temperature drops quickly, and mists begin to warp you two up\n\n");
+
+                            pause();
+
+                            printf("");
+
+                            pause();
+
+                            printf("");
+
+                            pause();
+
+                            printf("");
+
+                            pause();
+
+                            printf("");
+
+                            pause();
+
+                            printf("");
+
+                            pause();
+
+                            printf("");
+
+                            pause();
+                            break;
+
+                        }
                         case 2:
-                        printf("I follow the arrow to the forest\n");
-                        pause();
-                        printf("iii");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        printf("下次再来吧");
-                        pause();
-                        break;
-                        //case的break
+                        {
+
+
+
+
+                            break;
+                        }
+
                         case 3:
-                        printf("You seem to know about my past,can you continue to tell me abou that?\n");
+                        {
+
+
+
+
+                            break;
+                        }
+                        pause();
+                        printf("下次更新");
                         pause();
                         printf("");
                         pause();
                         printf("");
                         pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        pause();
-                        printf("");
-                        printf("下次再来吧");
-                        break;
-                        //case的break
-                    }
-                    //switch结束
-                    break;
-                    //case 1
-                    case 2:
-                    printf("You set up a camp-fire, and collect some fruits to eat.\n");
-                    pause();
-                    printf("As the sunlight shades,mobs seem to emerge suddenly\n");
-                    pause();
-                    printf("You have to avoid the large crowd and choose to return to the town.\n\n");
-                    pause();
-                    printf("后面就下次更新了");
-                    break;
-                    //case 2 的break
-                }
-                //switch的后括号
+               
             }
             //else if的后括号
             else
@@ -948,7 +1255,7 @@ int main()
                 pause();
                 printf("'Come in please, if you have any problems\n'");
                 pause();
-                pause("You follow her into the clinic\n");
+                printf("You follow her into the clinic\n");
                 pause();
                 printf("'Your ability to respond is very strong.\n Even if you didn't take medicine in the morning, you may have recovered now.I guess.\n'");
                 pause();
@@ -972,11 +1279,13 @@ int main()
             }
             break;
             //berserker的break
-            case 's':
+        case 's':
+            i = 2;//数组二号
             printf("\n\n               Profession--Saber\nYou are swifter than others a lot,while your strengh is still appreciable.\n");
             printf("In Demo Vision, this part is not available \n要付费才有得玩齁\n");
             break;
-            case 'w':
+        case 'w':
+            i = 3;//数组三号
             printf("\n\n               Profession--Wizard\nYou can have yourself healed every second,with significant magic damage but weak strengh.\n");
             pause();
             printf("In Demo Vision, this part is not available \n要付费才有得玩齁\n");
@@ -984,23 +1293,15 @@ int main()
         }
         //if的括号
         break;
-        case 'l':
+    case 'l':
         printf("load your file...\n");
-        while(a<30000000)
-        {
-            a++;
-            printf("");
-        }
+        pause();
         printf("Sorry,this part is under construction.");
         printf("In Demo Vision, this part is not available \n要付费才有得玩齁\n");
         break;
-        case 'o':
+    case 'o':
         printf("Set options...\n");
-        while(a<3000000)
-        {
-            a++;
-            printf("");
-        }
+        pause();
         printf("Sorry,this part is under construction.");
         printf("In Demo Vision, this part is not available \n要付费才有得玩齁\n");
         break;
